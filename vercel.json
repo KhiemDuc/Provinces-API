@@ -3,23 +3,23 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/main.py"
+      "destination": "main.py"
     },
     {
       "source": "/redoc",
-      "destination": "/main.py"
+      "destination": "main.py"
     },
     {
       "source": "/docs",
-      "destination": "/main.py"
+      "destination": "main.py"
     },
     {
       "source": "/openapi.json",
-      "destination": "/main.py"
+      "destination": "main.py"
     },
     {
       "source": "/static/:match*",
-      "destination": "/main.py"
+      "destination": "main.py"
     }
   ],
   "headers": [
