@@ -1,10 +1,5 @@
 {
   "public": true,
-  "functions": {
-    "main.py": {
-      "excludeFiles": "/_public"
-    }
-  },
   "rewrites": [
     {
       "source": "/(.*)",
