@@ -1,47 +1,14 @@
 {
-  "public": true,
-  "functions": {
-    "VN-Province-API/main.py": {
-      "excludeFiles": "VN-Province-API/_public"
-    }
-  },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/VN-Province-API/(.*)",
-      "destination": "/VN-Province-API/main.py"
-    },
-    {
-      "source": "/redoc",
-      "destination": "/VN-Province-API/main.py"
-    },
-    {
-      "source": "/docs",
-      "destination": "/VN-Province-API/main.py"
-    },
-    {
-      "source": "/openapi.json",
-      "destination": "/VN-Province-API/main.py"
-    },
-    {
-      "source": "/static/:match*",
-      "destination": "/VN-Province-API/main.py"
+      "src": "main.py",
+      "use": "@vercel/python"
     }
   ],
-  "headers": [
+  "routes": [
     {
-      "source": "/VN-Province-API/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Credentials", "value": "true" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-        }
-      ]
+      "src": "/(.*)",
+      "dest": "main.py"
     }
   ]
 }
