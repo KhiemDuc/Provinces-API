@@ -18,8 +18,8 @@ from vietnam_provinces import NESTED_DIVISIONS_JSON_PATH, __data_version__
 from vietnam_provinces.enums import ProvinceEnum, DistrictEnum
 from vietnam_provinces.enums.wards import WardEnum
 
-from schema import ProvinceResponse, District as DistrictResponse, Ward as WardResponse, SearchResult, VersionResponse
-from search import Searcher
+from api.schema import ProvinceResponse, District as DistrictResponse, Ward as WardResponse, SearchResult, VersionResponse
+from api.search import Searcher
 
 
 class Settings(BaseSettings):
