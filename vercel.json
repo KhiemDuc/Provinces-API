@@ -1,14 +1,47 @@
 {
-  "builds": [
+  "public": true,
+  "functions": {
+    "main.py": {
+      "excludeFiles": "/_public"
+    }
+  },
+  "rewrites": [
     {
-      "src": "main.py",
-      "use": "@vercel/python"
+      "source": "/(.*)",
+      "destination": "/main.py"
+    },
+    {
+      "source": "/redoc",
+      "destination": "/main.py"
+    },
+    {
+      "source": "/docs",
+      "destination": "/main.py"
+    },
+    {
+      "source": "/openapi.json",
+      "destination": "/main.py"
+    },
+    {
+      "source": "/static/:match*",
+      "destination": "/main.py"
     }
   ],
-  "routes": [
+  "headers": [
     {
-      "src": "/(.*)",
-      "dest": "main.py"
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Credentials", "value": "true" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+        }
+      ]
     }
   ]
 }
