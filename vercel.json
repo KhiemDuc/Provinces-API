@@ -1,35 +1,35 @@
 {
   "public": true,
   "functions": {
-    "api/main.py": {
-      "excludeFiles": "api/_public"
+    "VN-Province-API/main.py": {
+      "excludeFiles": "VN-Province-API/_public"
     }
   },
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/main.py"
+      "source": "/VN-Province-API/(.*)",
+      "destination": "/VN-Province-API/main.py"
     },
     {
       "source": "/redoc",
-      "destination": "/api/main.py"
+      "destination": "/VN-Province-API/main.py"
     },
     {
       "source": "/docs",
-      "destination": "/api/main.py"
+      "destination": "/VN-Province-API/main.py"
     },
     {
       "source": "/openapi.json",
-      "destination": "/api/main.py"
+      "destination": "/VN-Province-API/main.py"
     },
     {
       "source": "/static/:match*",
-      "destination": "/api/main.py"
+      "destination": "/VN-Province-API/main.py"
     }
   ],
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/VN-Province-API/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
