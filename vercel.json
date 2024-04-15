@@ -2,11 +2,16 @@
   "public": true,
   "functions": {
     "api/main.py": {
-      "excludeFiles": "api/_public",
-      "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+      "excludeFiles": "api/_public"
     }
   },
+  "builds": [
+    {
+      "src": "api/main.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.8" }
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
