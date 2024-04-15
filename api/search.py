@@ -9,7 +9,7 @@ from vietnam_provinces import Province, District, Ward
 from vietnam_provinces.enums import ProvinceEnum, DistrictEnum
 from vietnam_provinces.enums.wards import WardEnum
 
-from api.schema import DivisionLevel, SearchResult
+from schema import DivisionLevel, SearchResult
 
 
 logger = Logger(__name__)

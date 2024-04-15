@@ -2,7 +2,8 @@
   "public": true,
   "functions": {
     "api/main.py": {
-      "excludeFiles": "api/_public"
+      "excludeFiles": "api/_public",
+      "runtime": "python3.9"
     }
   },
   "rewrites": [
