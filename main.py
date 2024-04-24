@@ -20,6 +20,7 @@ from vietnam_provinces.enums.wards import WardEnum
 
 from schema import ProvinceResponse, District as DistrictResponse, Ward as WardResponse, SearchResult, VersionResponse
 from search import Searcher
+from fastapi.middleware.cors import CORSMiddleware
 
 
 class Settings(BaseSettings):
@@ -38,6 +39,19 @@ if not os.getenv('VERCEL'):
     ColorizedStderrHandler().push_application()
 else:
     StreamHandler(sys.stdout).push_application()
+
+
+origins = [
+    "*",  # Cho phép tất cả các origin
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 SearchResults = List[SearchResult]
